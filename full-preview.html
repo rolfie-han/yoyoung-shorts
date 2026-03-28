@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YoYoung Shorts 优扬短剧 - 全量展示预览</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #dbe5f1;
+      --brand: #5b6cff;
+      --brand-2: #d64b78;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(91,108,255,0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(214,75,120,0.10), transparent 22%),
+        var(--bg);
+      line-height: 1.75;
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 24px 80px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .brand img {
+      width: 250px;
+      max-width: 100%;
+      display: block;
+    }
+
+    .badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(91,108,255,0.10);
+      color: var(--brand);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav {
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 14px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .nav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero,
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+
+    .hero-copy,
+    .section-inner {
+      padding: 28px;
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 14px;
+      font-size: 48px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 900px;
+    }
+
+    .hero-image {
+      padding: 0 28px 28px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .card img,
+    .card video {
+      width: 100%;
+      display: block;
+      background: #eef3fb;
+    }
+
+    .card-body {
+      padding: 16px 18px 18px;
+    }
+
+    .card-body h3,
+    .card-body h4 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .card-body p,
+    .card-body li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card-body ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    .feature-box {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(91,108,255,0.06), rgba(214,75,120,0.03));
+      padding: 18px;
+    }
+
+    .feature-box h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .feature-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .text-panel {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      padding: 22px 24px;
+    }
+
+    .text-panel h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .text-panel h4 {
+      margin: 22px 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .text-panel p,
+    .text-panel li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .text-panel ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .flow-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(91,108,255,0.05), rgba(214,75,120,0.03));
+      padding: 16px 18px;
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(214,75,120,0.08);
+      color: #7c2d12;
+      font-size: 14px;
+    }
+
+    .subnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 20px;
+    }
+
+    .subnav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero-copy h1 { font-size: 36px; }
+      .nav { position: static; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <img src="./assets/logo/logo-wordmark-horizontal.png" alt="YoYoung Shorts Logo" />
+      </div>
+      <div class="badge">全量本地预览页</div>
+    </div>
+
+    <div class="nav">
+      <a href="#home">首页概览</a>
+      <a href="#features">功能说明</a>
+      <a href="#cases">案例展示</a>
+      <a href="#videos">演示视频</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#repo">仓库文件</a>
+    </div>
+
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <h1>从一句想法开始，自动组织分镜脚本、连续图片与视频结果</h1>
+        <p>
+          YoYoung Shorts 优扬短剧不是单点模型入口，也不是把几个接口拼在一起的壳。它更像一套把角色、场景、道具、分镜脚本、图片和视频串成连续工作流的 AI 短剧工作台，让不会写复杂提示词的人也能更快开始创作。
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/hero/hero-overview-main.png" alt="YoYoung Shorts Hero" />
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-inner">
+        <h2>功能说明</h2>
+        <p class="lead">这里不是首页简版摘要，而是把主要功能区逐个讲清楚。</p>
+
+        <div class="text-panel" style="margin-bottom: 18px;">
+          <h3>核心功能</h3>
+          <h4>1. 从一句想法开始</h4>
+          <p>输入一个主题、剧情片段或者模糊灵感，不需要先准备复杂提示词，系统就会把它继续组织进后续创作流程。</p>
+          <ul>
+            <li>降低短剧创作的提示词门槛</li>
+            <li>更适合不会写复杂提示词的用户</li>
+            <li>把灵感快速推进到后续脚本和画面阶段</li>
+          </ul>
+
+          <h4>2. 自动组织系列化分镜脚本</h4>
+          <p>不是只写一段文案，而是会继续拆成不同镜头、不同景别、不同动作阶段的系列化脚本，方便后续连接图片和视频。</p>
+          <ul>
+            <li>自动组织镜头内容</li>
+            <li>脚本不是终点，而是后续可执行骨架</li>
+            <li>更适合短剧和连续内容创作</li>
+          </ul>
+
+          <h4>3. 图片一致性与资产锚定</h4>
+          <p>角色、场景、道具不是一次性提示词，而是持续进入后续生成流程。单图、多图叙事、分镜脚本会共享同一条连续创作链。</p>
+          <ul>
+            <li>单角色一致性更容易被感知</li>
+            <li>多图叙事更像连续画面，而不是独立结果</li>
+            <li>资产中心是工作流锚点，不是摆设</li>
+          </ul>
+
+          <h4>4. 图像到视频闭环</h4>
+          <p>分镜和图片不会停在静态图层，而是可以继续推进到视频阶段，让整套产品更像工作台，而不是几个分散功能页。</p>
+          <ul>
+            <li>脚本可继续推进为视频</li>
+            <li>图片可继续承接到视频生成</li>
+            <li>视频结果能进入历史沉淀与复用</li>
+          </ul>
+        </div>
+
+        <div class="subnav">
+          <a href="#create">Create</a>
+          <a href="#story">Story</a>
+          <a href="#script">Script</a>
+          <a href="#video">Video</a>
+          <a href="#assets">Assets</a>
+          <a href="#history">History</a>
+        </div>
+
+        <div class="grid-2">
+          <article class="card" id="create">
+            <img src="./assets/showcases/showcase-create-single-image-with-assets.png" alt="Create" />
+            <div class="card-body">
+              <h3>Create：从一句想法开始</h3>
+              <p>Create 更像创作入口，而不是提示词工程入口。用户先输入一个想法，再把它推进到图片、分镜脚本和视频流程里。</p>
+            </div>
+          </article>
+
+          <article class="card" id="assets">
+            <img src="./assets/showcases/showcase-assets-anchor-system.png" alt="Assets" />
+            <div class="card-body">
+              <h3>Assets：角色、场景、道具作为锚点</h3>
+              <p>资产中心不是装饰，而是工作流里的锚点系统。角色、场景、道具会在后续单图、多图、分镜脚本和视频阶段持续进入生成链。</p>
+            </div>
+          </article>
+
+          <article class="card" id="story">
+            <img src="./assets/showcases/showcase-story-multi-frame-consistency.png" alt="Story" />
+            <div class="card-body">
+              <h3>Story：多图叙事不是重复同一张图</h3>
+              <p>多图叙事的重点不是多出几张图，而是把同一个剧情段落组织成连续画面，保留角色关系、场景氛围和动作推进感。</p>
+            </div>
+          </article>
+
+          <article class="card" id="history">
+            <img src="./assets/cases/case-single-character-consistency-history.png" alt="History" />
+            <div class="card-body">
+              <h3>History：结果沉淀与复用</h3>
+              <p>历史记录不仅是归档区，也是在公开展示里解释“连续创作”和“结果可复用”的最好证据。单角色一致性、同一主题的连续画面，都能在这里直接看出来。</p>
+            </div>
+          </article>
+
+          <article class="card" id="script">
+            <img src="./assets/showcases/showcase-script-to-video.png" alt="Script" />
+            <div class="card-body">
+              <h3>Script：自动组织系列化分镜脚本</h3>
+              <p>Script 区不是只生成一段文案，而是会把内容组织成可继续执行的不同分镜脚本。每个镜头都可以继续连接图片和视频结果。</p>
+            </div>
+          </article>
+
+          <article class="card" id="video">
+            <img src="./assets/showcases/showcase-video-workbench.png" alt="Video" />
+            <div class="card-body">
+              <h3>Video：图像与脚本继续推进到视频阶段</h3>
+              <p>这里展示的是真正的视频功能区。它承接前面的图像和提示，让静态结果继续进入视频阶段，而不只是停留在图片层。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-inner">
+        <h2>案例展示</h2>
+        <p class="lead">重点不是堆截图，而是说明这些结果为什么能体现产品价值。</p>
+
+        <div class="grid-2">
+          <article class="card">
+            <img src="./assets/cases/case-single-character-consistency-history.png" alt="Single character consistency" />
+            <div class="card-body">
+              <h3>案例 1：单角色一致性</h3>
+              <p>同一个角色在不同镜头、构图和动作里仍然保持稳定的角色识别感，是当前最成熟、最容易被用户感知的能力之一。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="./assets/showcases/showcase-story-multi-frame-consistency.png" alt="Story continuity" />
+            <div class="card-body">
+              <h3>案例 2：多图叙事连续性</h3>
+              <p>不是反复生成独立图片，而是把一个剧情段落组织成多张连续画面，保留角色关系、氛围和动作推进感。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="./assets/showcases/showcase-assets-anchor-system.png" alt="Asset anchor" />
+            <div class="card-body">
+              <h3>案例 3：资产中心进入工作流</h3>
+              <p>角色、场景、道具不是一次性提示词，而是作为创作锚点持续进入后续流程，这是区别于普通生成工具的重要差异。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="./assets/showcases/showcase-script-to-video.png" alt="Script to video case" />
+            <div class="card-body">
+              <h3>案例 4：从分镜脚本到视频结果</h3>
+              <p>这张图最能说明脚本不是终点，画面也不是终点，它们都可以继续推进到视频结果。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="./assets/showcases/showcase-video-workbench.png" alt="Video workbench case" />
+            <div class="card-body">
+              <h3>案例 5：视频生成功能区</h3>
+              <p>它展示的是视频工作台，不是单一结果页。左侧有前序图像，中间承接结果，右侧是视频参数和策略区域。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="./assets/showcases/showcase-script-video-audio-workbench.png" alt="Script, video and audio workbench" />
+            <div class="card-body">
+              <h3>案例 6：脚本、视频与音频工作区</h3>
+              <p>这张图更像完整工作台的证明图，说明产品不是只停留在单一结果页，而是有继续编辑和串联的空间。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>工作流程</h2>
+        <p class="lead">YoYoung Shorts 优扬短剧最重要的不是某一个按钮多强，而是这些功能区之间是连着的。</p>
+        <div class="flow-box">
+          一句想法 → Create 起稿 → Story 多图叙事 → Script 系列分镜脚本 → Video 视频结果 → History 回看与复用
+        </div>
+        <div class="text-panel" style="margin-top: 18px;">
+          <p>
+            这条链路里，Assets 会持续进入各个阶段，角色、场景、道具不会在中途消失。也正因为如此，这套产品更像“创作工作台”，而不是几个散落的生成页面。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="section-inner">
+        <h2>演示视频</h2>
+        <p class="lead">相比 GIF，短视频更适合展示这类连续工作流，也更清楚。</p>
+
+        <div class="grid-3">
+          <article class="card">
+            <video controls preload="metadata" src="./assets/videos/demo-idea-to-script.mp4"></video>
+            <div class="card-body">
+              <h3>一句想法 → 分镜脚本</h3>
+              <p>展示低提示词门槛，以及从灵感直接进入脚本组织流程。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <video controls preload="metadata" src="./assets/videos/demo-assets-to-story.mp4"></video>
+            <div class="card-body">
+              <h3>资产中心 → 多图叙事</h3>
+              <p>展示资产如何真正进入连续创作链，而不是只存在于设置层。</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <video controls preload="metadata" src="./assets/videos/demo-script-to-video.mp4"></video>
+            <div class="card-body">
+              <h3>分镜脚本 → 视频结果</h3>
+              <p>展示脚本、图像和视频之间的连续推进关系。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="note">
+          当前这个全量预览页主要用于提前查看 GitHub 展示内容结构，不等于应用本身的全部文档体系。真正上传时，核心会拆成 README、FEATURES、CASES、CHANGELOG、ROADMAP 等页面。
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="section-inner">
+        <h2>路线图与边界</h2>
+        <div class="grid-2">
+          <div class="feature-box">
+            <h3>Current Focus</h3>
+            <p>继续打磨从一句想法到分镜脚本、连续图片和视频结果的工作流，并持续强化图片一致性与资产化逻辑。</p>
+          </div>
+          <div class="feature-box">
+            <h3>Next</h3>
+            <p>进一步完善公开展示案例，让角色、场景、道具、多图叙事和脚本视频闭环更容易被看懂。</p>
+          </div>
+          <div class="feature-box">
+            <h3>Longer Term</h3>
+            <p>随着底层模型能力提升，持续放大视频工作流和更长链路连续创作的上限。</p>
+          </div>
+          <div class="feature-box">
+            <h3>Out of Scope</h3>
+            <p>这个公开展示仓库不包含源码、运行包、Docker 包、私有化交付细节、中转兼容和 fallback 策略。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>适用场景</h2>
+        <div class="grid-2">
+          <div class="feature-box">
+            <h3>短剧创作</h3>
+            <p>更适合需要从一句剧情想法快速推进到分镜脚本、连续图片和视频结果的创作流程。</p>
+          </div>
+          <div class="feature-box">
+            <h3>故事化内容可视化</h3>
+            <p>适合需要把角色关系、场景氛围和连续画面组织出来的内容，而不是只生成单张图。</p>
+          </div>
+          <div class="feature-box">
+            <h3>角色资产驱动创作</h3>
+            <p>适合重视角色、场景、道具在后续阶段持续延续的内容生产方式。</p>
+          </div>
+          <div class="feature-box">
+            <h3>从图像继续推进到视频</h3>
+            <p>适合希望把静态画面进一步组织成视频结果，而不是在图片阶段停止的创作方式。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="repo">
+      <div class="section-inner">
+        <h2>上传后的仓库结构</h2>
+        <div class="grid-2">
+          <div class="feature-box">
+            <h3>首页与说明</h3>
+            <p>
+              README 首页负责第一眼展示；FEATURES 负责讲清功能区；CASES 负责讲案例；CHANGELOG、ROADMAP 和 LICENSE-NOTICE 负责补充仓库信息。
+            </p>
+          </div>
+          <div class="feature-box">
+            <h3>素材结构</h3>
+            <p>
+              `assets/logo` 放品牌素材；`assets/hero` 放首屏图；`assets/showcases` 放功能区展示图；`assets/cases` 放案例图；`assets/videos` 放短视频演示。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>这个全量预览页和 GitHub 实际页面的关系</h2>
+        <div class="text-panel">
+          <p>
+            这个 <code>full-preview.html</code> 是把未来 GitHub 上的多份内容合并到了一个本地页面里，所以你能一次性看到首页、功能说明、案例展示、演示视频和路线图。
+          </p>
+          <p>
+            真正上传到 GitHub 之后，这些内容不会全部挤在一个 HTML 页面里，而是拆成：
+          </p>
+          <ul>
+            <li><code>README.md</code>：首页和核心展示</li>
+            <li><code>FEATURES.md</code>：详细功能说明</li>
+            <li><code>CASES.md</code>：案例展示</li>
+            <li><code>ROADMAP.md</code>：路线图</li>
+            <li><code>CHANGELOG.md</code>、<code>LICENSE-NOTICE.md</code>：补充说明</li>
+          </ul>
+          <p>
+            所以你现在看到的“文字说明不够多”，不是 GitHub 最终只能这样，而是我前一个版本的预览页还偏首页化。这一版已经往“更像别人完整仓库说明页”的方向补齐了。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      这是本地全量预览页，用于在上传 GitHub 前检查首页、功能页和案例页的主要内容组织方式。
+    </div>
+  </div>
+</body>
+</html>
