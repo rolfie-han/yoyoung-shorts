@@ -10,6 +10,18 @@ It is important to make the following boundaries explicit:
 
 Unless explicitly authorized, the showcase materials, product copy, case assets, and core implementation ideas may not be copied, redistributed, or used for commercial replication.
 
+## Trademark and Brand Notice
+
+No trademark, logo, brand, or visual identity rights are granted by this repository.
+
+Without explicit written authorization, the following may not be used for commercial purposes, promotional purposes, derivative products, or any confusingly similar product or service:
+
+- the brand names `YoYoung Shorts` and `优扬短剧`
+- the YoYoung Shorts logos, wordmarks, icons, and brand visuals
+- repository screenshots, showcase graphics, and branded case-study materials in a way that implies endorsement, affiliation, or product origin
+
+Commercial use of the brand name, logo, trademark-like identifiers, or branded visual assets is expressly prohibited unless prior written permission has been obtained.
+
 ## What This Repository Is
 
 - a public showcase repository
