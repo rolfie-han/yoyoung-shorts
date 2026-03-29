@@ -234,6 +234,20 @@
       padding: 0;
     }
 
+    .hero-note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid rgba(91,108,255,0.18);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(91,108,255,0.08), rgba(214,75,120,0.04));
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-note strong {
+      color: var(--text);
+    }
+
     .flow-box {
       border: 1px solid var(--line);
       border-radius: 18px;
@@ -309,16 +323,47 @@
         <p>
           YoYoung Shorts 优扬短剧不是单点模型入口，也不是把几个接口拼在一起的壳。它更像一套把角色、场景、道具、分镜脚本、图片和视频串成连续工作流的 AI 短剧工作台，让不会写复杂提示词的人也能更快开始创作。
         </p>
+        <div class="hero-note">
+          <strong>由一名独立开发者持续构建。</strong>
+          当前仍处于首尾打磨阶段。出于个人精力和产品成熟度考虑，现阶段不会开放相关源码；后续会在产品更稳定后，考虑开放部分基础能力展示版，用于社区交流与展示。
+        </div>
       </div>
       <div class="hero-image">
         <img src="./assets/hero/hero-overview-main.png" alt="YoYoung Shorts Hero" />
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-inner">
+        <h2>为什么值得关注</h2>
+        <p class="lead">现在 GitHub 上不缺“接模型”的工具，真正稀缺的是把创作流程组织起来的产品。</p>
+        <div class="grid-2">
+          <div class="text-panel">
+            <h3>关注它，不是因为模型多，而是因为工作流是连着的</h3>
+            <ul>
+              <li>一句想法可以继续推进到脚本、图片和视频，而不是在某一个按钮前停住</li>
+              <li>角色、场景、道具会持续参与后续生成，而不是每一步重新描述</li>
+              <li>图片一致性不是单张偶然结果，而是单图、多图叙事、分镜脚本共用的一条连续创作链</li>
+              <li>结果会沉淀到历史记录里，便于回看、比较和继续扩展</li>
+            </ul>
+          </div>
+          <div class="text-panel">
+            <h3>它和常见同类工具的差别</h3>
+            <ul>
+              <li>很多工具更像模型导航页，这里更像创作工作台</li>
+              <li>很多工具要求先写复杂提示词，这里更强调先有想法，再逐步组织</li>
+              <li>很多工具只停在图片层，这里会继续把脚本和图片推进到视频结果</li>
+              <li>很多工具结果生成完就结束，这里更强调沉淀、复用和继续延展</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="features">
       <div class="section-inner">
-        <h2>功能说明</h2>
-        <p class="lead">这里不是首页简版摘要，而是把主要功能区逐个讲清楚。</p>
+        <h2>功能区与核心能力</h2>
+        <p class="lead">这里不是简单列按钮，而是解释为什么这些功能组合在一起，才构成产品真正的价值。</p>
 
         <div class="text-panel" style="margin-bottom: 18px;">
           <h3>核心功能</h3>
@@ -520,7 +565,7 @@
         </div>
 
         <div class="note">
-          当前这个全量预览页主要用于提前查看 GitHub 展示内容结构，不等于应用本身的全部文档体系。真正上传时，核心会拆成 README、FEATURES、CASES、CHANGELOG、ROADMAP 等页面。
+          GitHub 对仓库里的 mp4 内联预览支持并不总是理想，所以当前仓库会把视频同时作为“演示材料入口”和“补充证据”。真正的核心说服力仍然来自：主叙事、功能说明、案例解释和连续工作流结构。后续会考虑补更顺手的在线演示方式。
         </div>
       </div>
     </section>
@@ -545,6 +590,27 @@
             <h3>Out of Scope</h3>
             <p>这个公开展示仓库不包含源码、运行包、Docker 包、私有化交付细节、中转兼容和 fallback 策略。</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <h2>为什么不是单纯的图片展示页</h2>
+        <div class="text-panel">
+          <p>
+            如果这里只是堆很多截图，那么它看起来会像“效果图展板”。但对 YoYoung Shorts 优扬短剧来说，更重要的是把这些截图解释成一条连续关系：
+          </p>
+          <ul>
+            <li>想法如何进入 Create</li>
+            <li>资产如何进入后续 Story、Script 和 Video</li>
+            <li>为什么多图叙事不是重复出图</li>
+            <li>为什么脚本不是终点，而是继续推进视频的骨架</li>
+            <li>为什么历史记录意味着结果可以沉淀和复用</li>
+          </ul>
+          <p>
+            也正因为如此，这个展示仓库最应该表达的不是“支持了多少模型”，而是“这套产品把创作过程组织成了什么样子”。
+          </p>
         </div>
       </div>
     </section>
