@@ -11,7 +11,7 @@ It is important to make the following boundaries explicit:
 
 ## Downloadable Runtime Trial Packages
 
-If this repository links to or attaches a Docker/DACKER thin local package in GitHub Releases, that package is provided only as a closed-source runtime trial shell for accessing the official YoYoung Shorts service flow.
+If this repository links to or attaches a Docker thin local package in GitHub Releases, that package is provided only as a closed-source runtime trial shell for accessing the official YoYoung Shorts service flow.
 
 Such a package does not include, disclose, or relicense the private backend implementation, model-provider routing logic, proxy strategy, fallback strategy, API-key management, license enforcement, admin implementation, billing logic, or commercial orchestration.
 

@@ -6,7 +6,7 @@
 
 ## v0.1.1-docker-thin-public-clean
 
-这是第一版 Docker/DACKER 本地体验包。
+这是第一版 Docker 本地体验包。
 
 适合你在这些场景下使用：
 
@@ -38,7 +38,7 @@ SHA256 校验码：
 
 ### 小白怎么开始
 
-1. 安装并启动 Docker Desktop 或 DACKER。
+1. 安装并启动 Docker Desktop，或确认本机已有可用的 Docker 环境。
 2. 下载 `docker-local-package-thin-bundle.zip` 并解压。
 3. 把 `.env.example` 复制一份，改名为 `.env`。
 4. 在 `.env` 里填写官方提供的 `CLOUD_BACKEND_ORIGIN`，如果 `8080` 端口被占用，可以修改 `LOCAL_WEB_PORT`。
