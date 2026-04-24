@@ -1,45 +1,77 @@
-﻿# Releases
+# Releases
 
-This repository is a public showcase for `YoYoung Shorts 优扬短剧`.
+这里会放 `YoYoung Shorts 优扬短剧` 的公开体验包和演示材料。
 
-Release assets, when published here, are not open-source source-code distributions. They are limited closed-source trial/runtime packages intended to let users try the public-facing local shell while the private backend and commercial implementation remain closed.
+如果你想先在自己的电脑上看一看产品形态、界面节奏和创作流程，可以从 Release 里下载本地软件包。它的重点不是让你折腾部署，而是尽快跑起来、点进去、看清楚这套 AI 短剧工作台到底在解决什么问题。
 
 ## v0.1.1-docker-thin-public-clean
 
-Package: `docker-local-package-thin-bundle.zip`
+这是第一版 Docker/DACKER 本地体验包。
 
-SHA256:
+适合你在这些场景下使用：
+
+- 想快速看看 YoYoung Shorts 的整体界面和创作入口。
+- 想体验从创作工作台进入脚本、图片、视频相关流程的产品结构。
+- 不想一上来配置复杂模型服务和一堆 API。
+- 想给朋友、用户或潜在合作方一个更直观的试用入口。
+
+下载这个文件即可：
+
+```text
+docker-local-package-thin-bundle.zip
+```
+
+SHA256 校验码：
 
 ```text
 9DB915D3B2105C1B5CB3C3DABB442517059F8CE7FD455EF1082B9C7C614E6A31
 ```
 
-### What This Package Contains
+这串 SHA256 可以理解成文件指纹。下载后如果你想确认文件没有损坏或被替换，可以用它做完整性校验；不校验也不影响正常下载和试用。
 
-- Docker/DACKER thin local runtime shell.
-- Static frontend runtime assets required for the local package experience.
-- Local reverse-proxy/runtime configuration needed to connect the shell to the official service flow.
-- Public package metadata and startup instructions.
+### 你可以体验到什么
 
-### What This Package Does Not Contain
+- 一个更接近真实产品的本地运行入口。
+- 优扬短剧的创作工作台界面和主要功能区组织方式。
+- 从想法到脚本、图片、视频相关流程的产品连接感。
+- 面向普通创作者的使用路径，而不是面向工程师的接口拼装页。
 
-- Private backend source code.
-- Cloud deployment code.
-- Model-provider routing implementation.
-- Proxy/fallback strategy implementation.
-- API keys, cloud secrets, SSH keys, database files, or private environment files.
-- Admin/license backend implementation.
-- Commercial orchestration or billing implementation.
+### 小白怎么开始
 
-### Verification Summary
+1. 安装并启动 Docker Desktop 或 DACKER。
+2. 下载 `docker-local-package-thin-bundle.zip` 并解压。
+3. 把 `.env.example` 复制一份，改名为 `.env`。
+4. 在 `.env` 里填写官方提供的 `CLOUD_BACKEND_ORIGIN`，如果 `8080` 端口被占用，可以修改 `LOCAL_WEB_PORT`。
+5. 在解压目录运行：
 
-Before publication, this package was checked for:
+```powershell
+docker compose up -d --build
+```
 
-- No backend source package directories included.
-- No `.env`, database, private key, SSH key, or API-key files included.
-- No hardcoded public backend IP URLs in the packaged frontend output.
-- Docker startup smoke check passed locally.
-- Backend health route proxy check passed locally.
-- Admin page static access check passed locally.
+启动后打开：
 
-This verification does not convert the package into an open-source distribution. The package remains governed by `LICENSE-NOTICE.md` and any release-specific notes.
+```text
+http://127.0.0.1:<LOCAL_WEB_PORT>
+```
+
+停止时运行：
+
+```powershell
+docker compose down
+```
+
+### 小提示
+
+这个包是面向公开体验的本地软件包，不是完整源码自部署版。核心生成能力、服务调度和商业后端由官方服务提供，所以你不需要在本地维护复杂模型、密钥和后端环境。
+
+如果你只是想先了解产品能力，可以先看仓库首页的截图、案例和演示视频；如果你想实际跑起来，请下载本页的 zip 包。
+
+### 发布前检查
+
+- 本地启动冒烟检查已通过。
+- 后端健康路由代理检查已通过。
+- 管理页面静态访问检查已通过。
+- 打包内容已检查，不包含 `.env`、数据库文件、私钥、SSH 密钥或 API 密钥文件。
+- 打包后的前端输出未写死公开后端 IP URL。
+
+更多边界说明见 [LICENSE-NOTICE.md](./LICENSE-NOTICE.md)。
