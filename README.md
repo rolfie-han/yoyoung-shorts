@@ -89,6 +89,34 @@ docker compose up -d --build
 http://127.0.0.1:<LOCAL_WEB_PORT>
 ```
 
+### 常见启动问题
+
+如果你在启动过程中看到类似下面的报错：
+
+- `failed to resolve source metadata`
+- `context deadline exceeded`
+- `failed to do request`
+- `docker.io/library/nginx`
+- `docker.io/library/node`
+
+这通常不是本地体验包代码损坏，而是 Docker 在拉取基础镜像时网络超时了。
+
+你可以先单独测试 Docker 是否能正常拉镜像：
+
+```bash
+docker pull nginx:1.27-alpine
+```
+
+如果这里也失败，建议优先检查：
+
+1. Docker Desktop 是否已经完全启动
+2. 当前网络是否能正常访问 Docker Hub
+3. 是否需要配置 Docker 镜像源
+4. 是否有代理、VPN、公司网络或校园网影响 Docker 拉镜像
+5. 本机端口是否被其他程序占用
+
+如果你不确定怎么判断，最省时间的方式是把报错截图或终端输出发到测试群，通常可以很快定位是网络问题、Docker 环境问题，还是 `.env` 配置问题。
+
 ## 核心亮点
 
 ### 1. 从一句想法开始，而不是从复杂提示词开始
