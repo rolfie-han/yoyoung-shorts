@@ -230,5 +230,3 @@ YoYoung Shorts 优扬短剧由一名独立开发者持续构建。
 欢迎分享本仓库链接、Release 下载链接和公开展示内容，帮助更多人了解这个项目。
 
 当前仓库不是完整源码开源项目。品牌、素材、截图、体验包和相关说明的使用边界见 [LICENSE-NOTICE.md](./LICENSE-NOTICE.md)。
-
-友情链接： [LINUX DO](https://linux.do/)
