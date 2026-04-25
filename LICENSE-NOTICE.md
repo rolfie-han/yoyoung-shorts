@@ -1,54 +1,63 @@
-﻿# License Notice
+# License Notice
 
-This repository is intended to present `YoYoung Shorts 优扬短剧` as a product showcase.
+本仓库用于展示 `YoYoung Shorts 优扬短剧` 的产品方向、功能能力、工作流程和案例内容。
 
-It is important to make the following boundaries explicit:
+它是一个公开展示窗口，用来帮助用户了解产品、查看更新说明、下载体验包并参与反馈；但这并不代表完整产品源代码、运行时实现或商业部署能力已经公开。
 
-- This repository is for showcasing product capabilities, workflow, and results.
-- Public visibility of this repository does not mean the full product source code is public.
-- The core backend, cloud services, model routing, proxy/fallback logic, key management, license system, admin system, orchestration logic, and commercial deployment code are not open sourced by this repository.
-- Unless a separate written license says otherwise, no source-code, runtime, redistribution, resale, cloning, or commercial replication rights are granted.
+## 你可以在这里做什么
 
-## Downloadable Runtime Trial Packages
+- 浏览公开的产品介绍、截图、案例和更新说明
+- 下载 GitHub Releases 中发布的官方本地体验包，并按说明进行体验
+- 基于公开信息了解产品形态、工作流和使用方向
 
-If this repository links to or attaches a Docker thin local package in GitHub Releases, that package is provided only as a closed-source runtime trial shell for accessing the official YoYoung Shorts service flow.
+## 这不代表什么
 
-Such a package does not include, disclose, or relicense the private backend implementation, model-provider routing logic, proxy strategy, fallback strategy, API-key management, license enforcement, admin implementation, billing logic, or commercial orchestration.
+- 仓库公开不代表完整源代码公开
+- Release 中的 Docker 本地体验包不等于完整源码版或自部署版
+- 除非另有明确书面授权，本仓库不授予源码使用、修改、再分发、转售、镜像、贴牌或商业复制权
 
-Without explicit written authorization, the package may not be decompiled, reverse engineered, redistributed, mirrored, resold, white-labeled, or used to build a competing product or service.
+## 关于本地体验包
 
-## Showcase Materials
+如果本仓库在 GitHub Releases 中提供 Docker 本地体验包，该体验包仅用于体验公开产品流程和界面能力。
 
-Unless explicitly authorized, the showcase materials, product copy, case assets, screenshots, videos, and core implementation ideas may not be copied, redistributed, or used for commercial replication.
+这类体验包通常只包含本地启动和体验所需的有限运行时外壳与说明文件，不包含以下内容：
 
-## Trademark and Brand Notice
+- 私有后端实现
+- 云端部署代码
+- 模型路由与代理 / 回退策略
+- API 密钥管理逻辑
+- 许可证系统、管理系统、计费逻辑或商业编排实现
 
-No trademark, logo, brand, or visual identity rights are granted by this repository.
+除非另有明确书面授权，不得对该体验包进行反编译、逆向工程、再分发、镜像、转售、贴牌，或将其用于构建竞争产品或服务。
 
-Without explicit written authorization, the following may not be used for commercial purposes, promotional purposes, derivative products, or any confusingly similar product or service:
+## 关于展示素材与品牌
 
-- the brand names `YoYoung Shorts` and `优扬短剧`
-- the YoYoung Shorts logos, wordmarks, icons, and brand visuals
-- repository screenshots, showcase graphics, and branded case-study materials in a way that implies endorsement, affiliation, or product origin
+本仓库中的产品文案、截图、案例素材、展示图片、视频和品牌视觉资产，仅用于展示 `YoYoung Shorts 优扬短剧` 本身。
 
-Commercial use of the brand name, logo, trademark-like identifiers, or branded visual assets is expressly prohibited unless prior written permission has been obtained.
+除非获得明确书面许可，不得将这些内容用于：
 
-## What This Repository Is
+- 商业转载或镜像分发
+- 二次包装、二次销售或白标使用
+- 容易引起品牌混淆的衍生产品、宣传材料或服务
 
-- a public showcase repository
-- a product capability and case-study presentation entry
-- a public-facing window into an independently built product
-- optionally, a distribution page for limited closed-source trial packages published through GitHub Releases
+`YoYoung Shorts`、`优扬短剧` 及相关 Logo、字标、图标和品牌视觉形象的权利均由原作者保留。
 
-## What This Repository Is Not
+## 这个仓库是什么
 
-- a full source repository
-- an open-source runtime repository
-- a backend implementation repository
-- a private deployment delivery repository
-- a permission grant to reproduce, mirror, resell, or commercialize the product
+- 一个公开展示仓库
+- 一个产品能力和案例说明入口
+- 一个面向公众的体验包发布与更新说明页面
+- 一个独立开发产品的公开窗口
 
-## Notes
+## 这个仓库不是什么
 
-- If any limited basic capability is opened in the future, it will be governed by the explicit notice published at that time.
-- Until such notice exists, no rights are granted for source use, modification, redistribution, reverse engineering, resale, or commercial replication.
+- 不是完整源代码仓库
+- 不是开源运行时仓库
+- 不是后端实现仓库
+- 不是私有部署交付仓库
+- 不是复制、镜像、转售或商业化该产品的授权文件
+
+## 后续说明
+
+- 如果未来开放任何有限的基础能力或新增授权范围，将以届时单独发布的说明或许可证为准
+- 在此之前，除公开展示和按说明体验外，其他相关权利默认不授予
