@@ -223,7 +223,18 @@ YoYoung Shorts 优扬短剧由一名独立开发者持续构建。
 
 > 二维码 7 天内有效，过期后会更新。
 
-<img src="./assets/community/wechat-test-group-2026-05-01.png" alt="优扬短剧测试群二维码" width="360" />
+<table>
+  <tr>
+    <td align="center">
+      <strong>测试反馈群</strong><br />
+      <img src="./assets/community/wechat-test-group-2026-05-01.png" alt="优扬短剧测试反馈群二维码" width="320" />
+    </td>
+    <td align="center">
+      <strong>个人反馈入口</strong><br />
+      <img src="./assets/community/wechat-personal-2026-05-31.jpg" alt="个人微信二维码" width="320" />
+    </td>
+  </tr>
+</table>
 
 ## 分享与许可
 
